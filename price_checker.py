@@ -48,7 +48,6 @@ def send_mail():
     subject = 'Prisen har falt!'
     body = 'Sjekk Amazon link: ' + URL
 
-    sender = input("Send e-mail from: ")
     reciever = input("Send e-mail to: ")
 
     msg = f"Subject: {subject}\n\n{body}"
