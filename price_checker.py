@@ -42,14 +42,19 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('henrik.noedtvedt@gmail.com', 'tfypmpbytubezxls')
+    sender = input("Send e-mail from: ")
+
+    server.login(sender, 'tfypmpbytubezxls')
     subject = 'Prisen har falt!'
     body = 'Sjekk Amazon link: ' + URL
 
+    sender = input("Send e-mail from: ")
+    reciever = input("Send e-mail to: ")
+
     msg = f"Subject: {subject}\n\n{body}"
     server.sendmail(
-        'henrik.noedtvedt@gmail.com',
-        'henreknod@gmail.com',
+        sender,
+        reciever,
         msg
         )
 
